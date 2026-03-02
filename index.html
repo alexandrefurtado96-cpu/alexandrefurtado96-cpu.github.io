@@ -42,6 +42,10 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link rel="preconnect" href="https://i.scdn.co" crossorigin />
+    <link rel="dns-prefetch" href="https://i.scdn.co" />
+    <link rel="preload" as="image" href="assets/img/mixing-new.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="assets/img/mastering-new.png" fetchpriority="high" />
     <style>
       @media (min-width: 992px) {
         html.w-mod-js:not(.w-mod-ix)
@@ -74,7 +78,12 @@
     <link rel="manifest" href="assets/img/favicon/site.webmanifest" />
     <style>
       ::selection {
-        background-color: rgba (0, 0, 0, 10);
+        background-color: transparent;
+        color: #B88486;
+        text-shadow: none;
+      }
+      ::-moz-selection {
+        background-color: transparent;
         color: #B88486;
         text-shadow: none;
       }
@@ -88,7 +97,7 @@
       /* Ensure works list and section are visible on mobile */
       @media (max-width: 479px) {
         /* Override desktop-only section hiding */
-        #work-section.desktop {
+        #work.desktop {
           display: block !important;
           visibility: visible !important;
         }
@@ -310,11 +319,11 @@
                   />
                   <ul role="list" class="nav-menu-block w-list-unstyled">
                     <li class="list-item">
-                      <a href="#work-section" class="nav-link">Records</a>
+                      <a href="#work" class="nav-link">Records</a>
                       <div class="nav-link space">/</div>
-                      <a href="#services-section" class="nav-link">Services</a>
+                      <a href="#services" class="nav-link">Services</a>
                       <div class="nav-link space">/</div>
-                      <a href="#contact-section" class="nav-link">Contact</a>
+                      <a href="#contact" class="nav-link">Contact</a>
                     </li>
                     <li>
                       <div
@@ -380,7 +389,7 @@
         </div>
       </div>
     </div>
-    <div id="work-section" class="section-work desktop">
+    <div id="work" class="section-work desktop">
       <div class="container-main w-container">
         <div class="work-collection-list-wrapper w-dyn-list">
           <div id="main-works-list" role="list" class="collection-list w-dyn-items">
@@ -427,7 +436,7 @@
         </div>
       </div>
     </div>
-    <div id="services-section" class="section-studio">
+    <div id="services" class="section-studio">
       <div class="container-main w-container">
         <div class="collection-list">
           <a href="/mixing" class="album-link w-inline-block">
@@ -436,7 +445,11 @@
                 <div class="album-image-wrapper">
                   <img
                     src="assets/img/mixing-new.png"
-                    loading="lazy"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                    width="1536"
+                    height="1024"
                     alt="Mixing service"
                     class="album-image"
                   />
@@ -451,7 +464,11 @@
                 <div class="album-image-wrapper">
                   <img
                     src="assets/img/mastering-new.png"
-                    loading="lazy"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                    width="1536"
+                    height="1024"
                     alt="Mastering service"
                     class="album-image"
                   />
@@ -467,6 +484,10 @@
                   <img
                     src="assets/img/production.png"
                     loading="lazy"
+                    fetchpriority="auto"
+                    decoding="async"
+                    width="1536"
+                    height="1024"
                     alt="Production service"
                     class="album-image"
                   />
@@ -482,6 +503,10 @@
                   <img
                     src="assets/img/livesound.png"
                     loading="lazy"
+                    fetchpriority="auto"
+                    decoding="async"
+                    width="1536"
+                    height="1024"
                     alt="Live sound service"
                     class="album-image"
                   />
@@ -493,7 +518,7 @@
         </div>
       </div>
     </div>
-    <div id="contact-section" class="section-contact">
+    <div id="contact" class="section-contact">
       <div
         data-w-id="35092fad-b691-7296-4a65-a7a68b25e7f9"
         class="hover-image-contact"
@@ -623,6 +648,10 @@
           for (let i = 0; i < targetCount; i++) {
             const work = allWorks[i];
             if (work && !existingIds.has(work.id)) {
+              const isPriorityImage = currentItemCount === 0 && i < 2;
+              const loadingAttr = isPriorityImage ? "eager" : "lazy";
+              const fetchPriorityAttr = isPriorityImage ? "high" : "auto";
+
               const item = document.createElement("div");
               item.className = "collection-item w-dyn-item";
               item.setAttribute("role", "listitem");
@@ -637,7 +666,7 @@
                   <div class="album-info-wrapper">
                     <div class="artwork-title-wrapper">
                       <div class="album-image-wrapper">
-                        <img src="${work.imageUrl}" loading="lazy" alt="${work.artist} - ${work.title}" class="album-image" />
+                        <img src="${work.imageUrl}" loading="${loadingAttr}" fetchpriority="${fetchPriorityAttr}" decoding="async" width="640" height="640" alt="${work.artist} - ${work.title}" class="album-image" />
                       </div>
                       <div class="artist-name">${work.artist}</div>
                       <div class="album-title">${work.title}</div>
