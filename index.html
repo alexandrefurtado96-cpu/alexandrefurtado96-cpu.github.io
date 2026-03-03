@@ -44,8 +44,30 @@
     />
     <link rel="preconnect" href="https://i.scdn.co" crossorigin />
     <link rel="dns-prefetch" href="https://i.scdn.co" />
-    <link rel="preload" as="image" href="assets/img/mixing-new.png" fetchpriority="high" />
-    <link rel="preload" as="image" href="assets/img/mastering-new.png" fetchpriority="high" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/img/artworks/concrete-monolite.webp"
+      imagesrcset="assets/img/artworks/concrete-monolite-320.webp 320w, assets/img/artworks/concrete-monolite.webp 640w"
+      imagesizes="(max-width: 479px) 100vw, (max-width: 991px) 50vw, 33vw"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/img/mixing-new.webp"
+      imagesrcset="assets/img/mixing-new-384.webp 384w, assets/img/mixing-new-768.webp 768w, assets/img/mixing-new.webp 1536w"
+      imagesizes="(max-width: 991px) 50vw, 45vw"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/img/mastering-new.webp"
+      imagesrcset="assets/img/mastering-new-384.webp 384w, assets/img/mastering-new-768.webp 768w, assets/img/mastering-new.webp 1536w"
+      imagesizes="(max-width: 991px) 50vw, 45vw"
+      fetchpriority="high"
+    />
     <style>
       @media (min-width: 992px) {
         html.w-mod-js:not(.w-mod-ix)
@@ -311,9 +333,14 @@
               <nav role="navigation" class="nav-menu-wrapper-three w-nav-menu">
                 <div class="nav-menu-three">
                   <img
-                    src="assets/img/afr49.png"
-                    loading="eager"
-                    sizes="(max-width: 1707px) 100vw, 1707px"
+                    src="assets/img/afr49.webp"
+                    srcset="assets/img/afr49-480.webp 480w, assets/img/afr49.webp 960w"
+                    sizes="(max-width: 991px) 100vw, 960px"
+                    loading="lazy"
+                    fetchpriority="low"
+                    decoding="async"
+                    width="960"
+                    height="1280"
                     alt="A photograph of Alexandre Furtado mixing new music at Roma49 studios Lisbon"
                     class="nav-image"
                   />
@@ -399,7 +426,7 @@
                 <div class="album-info-wrapper">
                   <div class="artwork-title-wrapper">
                     <div class="album-image-wrapper">
-                      <img src="assets/img/artworks/concrete-monolite.webp" loading="eager" fetchpriority="high" decoding="async" width="640" height="640" alt="Concrète [Lab] Ensemble - Monolite" class="album-image" />
+                      <img src="assets/img/artworks/concrete-monolite.webp" srcset="assets/img/artworks/concrete-monolite-320.webp 320w, assets/img/artworks/concrete-monolite.webp 640w" sizes="(max-width: 479px) 100vw, (max-width: 991px) 50vw, 33vw" loading="eager" fetchpriority="high" decoding="async" width="640" height="640" alt="Concrète [Lab] Ensemble - Monolite" class="album-image" />
                     </div>
                     <div class="artist-name">Concrète [Lab] Ensemble</div>
                     <div class="album-title">Monolite</div>
@@ -422,7 +449,7 @@
                 <div class="album-info-wrapper">
                   <div class="artwork-title-wrapper">
                     <div class="album-image-wrapper">
-                      <img src="assets/img/artworks/filipe-furtado-comosematamprimaveras.webp" loading="eager" fetchpriority="high" decoding="async" width="640" height="640" alt="Filipe Furtado - Como se Matam Primaveras" class="album-image" />
+                      <img src="assets/img/artworks/filipe-furtado-comosematamprimaveras.webp" srcset="assets/img/artworks/filipe-furtado-comosematamprimaveras-320.webp 320w, assets/img/artworks/filipe-furtado-comosematamprimaveras.webp 640w" sizes="(max-width: 479px) 100vw, (max-width: 991px) 50vw, 33vw" loading="eager" fetchpriority="high" decoding="async" width="640" height="640" alt="Filipe Furtado - Como se Matam Primaveras" class="album-image" />
                     </div>
                     <div class="artist-name">Filipe Furtado</div>
                     <div class="album-title">Como se Matam Primaveras</div>
@@ -448,7 +475,7 @@
                 <div class="album-info-wrapper">
                   <div class="artwork-title-wrapper">
                     <div class="album-image-wrapper">
-                      <img src="assets/img/artworks/filipe-furtado-ada.webp" loading="lazy" fetchpriority="auto" decoding="async" width="640" height="640" alt="Filipe Furtado - Ada" class="album-image" />
+                      <img src="assets/img/artworks/filipe-furtado-ada.webp" srcset="assets/img/artworks/filipe-furtado-ada-320.webp 320w, assets/img/artworks/filipe-furtado-ada.webp 640w" sizes="(max-width: 479px) 100vw, (max-width: 991px) 50vw, 33vw" loading="lazy" fetchpriority="auto" decoding="async" width="640" height="640" alt="Filipe Furtado - Ada" class="album-image" />
                     </div>
                     <div class="artist-name">Filipe Furtado</div>
                     <div class="album-title">Ada</div>
@@ -474,7 +501,7 @@
                 <div class="album-info-wrapper">
                   <div class="artwork-title-wrapper">
                     <div class="album-image-wrapper">
-                      <img src="assets/img/artworks/filipe-furtado-cravos.webp" loading="lazy" fetchpriority="auto" decoding="async" width="640" height="640" alt="Filipe Furtado - Cravos" class="album-image" />
+                      <img src="assets/img/artworks/filipe-furtado-cravos.webp" srcset="assets/img/artworks/filipe-furtado-cravos-320.webp 320w, assets/img/artworks/filipe-furtado-cravos.webp 640w" sizes="(max-width: 479px) 100vw, (max-width: 991px) 50vw, 33vw" loading="lazy" fetchpriority="auto" decoding="async" width="640" height="640" alt="Filipe Furtado - Cravos" class="album-image" />
                     </div>
                     <div class="artist-name">Filipe Furtado</div>
                     <div class="album-title">Cravos</div>
@@ -546,7 +573,9 @@
               <div class="artwork-title-wrapper">
                 <div class="album-image-wrapper">
                   <img
-                    src="assets/img/mixing-new.png"
+                    src="assets/img/mixing-new.webp"
+                    srcset="assets/img/mixing-new-384.webp 384w, assets/img/mixing-new-768.webp 768w, assets/img/mixing-new.webp 1536w"
+                    sizes="(max-width: 991px) 50vw, 45vw"
                     loading="eager"
                     fetchpriority="high"
                     decoding="async"
@@ -565,7 +594,9 @@
               <div class="artwork-title-wrapper">
                 <div class="album-image-wrapper">
                   <img
-                    src="assets/img/mastering-new.png"
+                    src="assets/img/mastering-new.webp"
+                    srcset="assets/img/mastering-new-384.webp 384w, assets/img/mastering-new-768.webp 768w, assets/img/mastering-new.webp 1536w"
+                    sizes="(max-width: 991px) 50vw, 45vw"
                     loading="eager"
                     fetchpriority="high"
                     decoding="async"
@@ -584,7 +615,9 @@
               <div class="artwork-title-wrapper">
                 <div class="album-image-wrapper">
                   <img
-                    src="assets/img/production.png"
+                    src="assets/img/production.webp"
+                    srcset="assets/img/production-384.webp 384w, assets/img/production-768.webp 768w, assets/img/production.webp 1536w"
+                    sizes="(max-width: 991px) 50vw, 45vw"
                     loading="lazy"
                     fetchpriority="auto"
                     decoding="async"
@@ -603,7 +636,9 @@
               <div class="artwork-title-wrapper">
                 <div class="album-image-wrapper">
                   <img
-                    src="assets/img/livesound.png"
+                    src="assets/img/livesound.webp"
+                    srcset="assets/img/livesound-384.webp 384w, assets/img/livesound-768.webp 768w, assets/img/livesound.webp 1536w"
+                    sizes="(max-width: 991px) 50vw, 45vw"
                     loading="lazy"
                     fetchpriority="auto"
                     decoding="async"
@@ -703,6 +738,27 @@
       let isLoading = false;
       let itemsPerPage = 10;
 
+      function getWorkImageAttrs(imageUrl) {
+        const safeUrl = String(imageUrl || "");
+        const isLocalArtwork =
+          safeUrl.startsWith("assets/img/artworks/") && safeUrl.endsWith(".webp");
+
+        if (!isLocalArtwork) {
+          return {
+            src: safeUrl,
+            srcset: "",
+            sizes: "",
+          };
+        }
+
+        const smallSrc = safeUrl.replace(/\.webp$/, "-320.webp");
+        return {
+          src: safeUrl,
+          srcset: `${smallSrc} 320w, ${safeUrl} 640w`,
+          sizes: "(max-width: 479px) 100vw, (max-width: 991px) 50vw, 33vw",
+        };
+      }
+
       async function loadWorksDatabase(clearExisting = true) {
         if (isLoading) return;
         isLoading = true;
@@ -764,6 +820,7 @@
               const isPriorityImage = currentItemCount === 0 && i < 2;
               const loadingAttr = isPriorityImage ? "eager" : "lazy";
               const fetchPriorityAttr = isPriorityImage ? "high" : "auto";
+              const imageAttrs = getWorkImageAttrs(work.imageUrl);
 
               const item = document.createElement("div");
               item.className = "collection-item w-dyn-item";
@@ -779,7 +836,7 @@
                   <div class="album-info-wrapper">
                     <div class="artwork-title-wrapper">
                       <div class="album-image-wrapper">
-                        <img src="${work.imageUrl}" loading="${loadingAttr}" fetchpriority="${fetchPriorityAttr}" decoding="async" width="640" height="640" alt="${work.artist} - ${work.title}" class="album-image" />
+                        <img src="${imageAttrs.src}"${imageAttrs.srcset ? ` srcset="${imageAttrs.srcset}" sizes="${imageAttrs.sizes}"` : ""} loading="${loadingAttr}" fetchpriority="${fetchPriorityAttr}" decoding="async" width="640" height="640" alt="${work.artist} - ${work.title}" class="album-image" />
                       </div>
                       <div class="artist-name">${work.artist}</div>
                       <div class="album-title">${work.title}</div>
