@@ -314,7 +314,7 @@
                     src="assets/img/afr49.png"
                     loading="eager"
                     sizes="(max-width: 1707px) 100vw, 1707px"
-                    alt="A picture of Alexandre Furtado mixing new music at Roma49 studios Lisbon"
+                    alt="A photograph of Alexandre Furtado mixing new music at Roma49 studios Lisbon"
                     class="nav-image"
                   />
                   <ul role="list" class="nav-menu-block w-list-unstyled">
@@ -650,14 +650,17 @@
     <script
       src="js/jquery.js?site=662123d7bfeef405751491c6"
       type="text/javascript"
+      defer
     ></script>
     <script
       src="js/chunk2.js"
       type="text/javascript"
+      defer
     ></script>
     <script
       src="js/chunk1.js"
       type="text/javascript"
+      defer
     ></script>
     <script>
       // Prevent dropdowns from auto-opening when viewport <= 479px.
@@ -691,6 +694,7 @@
     <script
       src="js/main.js"
       type="text/javascript"
+      defer
     ></script>
     <script>
       let allWorks = [];
@@ -833,52 +837,56 @@
         }
       });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script>
-      // Code that runs on pageload
-      gsap.to(".load_grid-item", {
-        opacity: 0,
-        duration: 0.001,
-        stagger: { amount: 0.5, from: "random" },
-        onComplete: () => {
-          gsap.set(".load_grid", { display: "none" });
-        },
-      });
+      window.addEventListener("load", function () {
+        if (!window.gsap || !window.jQuery) return;
 
-      // Code that runs on click of a link
-      $(document).ready(function () {
-        $("a").on("click", function (e) {
-          if (
-            $(this).prop("hostname") === window.location.host &&
-            $(this).attr("href").indexOf("#") === -1 &&
-            $(this).attr("target") !== "_blank"
-          ) {
-            e.preventDefault();
-            let destination = $(this).attr("href");
-            gsap.set(".load_grid", { display: "grid" });
-            gsap.fromTo(
-              ".load_grid-item",
-              {
-                opacity: 0,
-              },
-              {
-                opacity: 1,
-                duration: 0.001,
-                stagger: { amount: 0.5, from: "random" }, //you can also try a from: "start" or "end" -- get creative!
-                onComplete: () => {
-                  window.location = destination;
-                },
-              },
-            );
-          }
+        // Code that runs on pageload
+        gsap.to(".load_grid-item", {
+          opacity: 0,
+          duration: 0.001,
+          stagger: { amount: 0.5, from: "random" },
+          onComplete: () => {
+            gsap.set(".load_grid", { display: "none" });
+          },
         });
 
-        // On click of the back button
-        window.onpageshow = function (event) {
-          if (event.persisted) {
-            window.location.reload();
-          }
-        };
+        // Code that runs on click of a link
+        $(document).ready(function () {
+          $("a").on("click", function (e) {
+            if (
+              $(this).prop("hostname") === window.location.host &&
+              $(this).attr("href").indexOf("#") === -1 &&
+              $(this).attr("target") !== "_blank"
+            ) {
+              e.preventDefault();
+              let destination = $(this).attr("href");
+              gsap.set(".load_grid", { display: "grid" });
+              gsap.fromTo(
+                ".load_grid-item",
+                {
+                  opacity: 0,
+                },
+                {
+                  opacity: 1,
+                  duration: 0.001,
+                  stagger: { amount: 0.5, from: "random" }, //you can also try a from: "start" or "end" -- get creative!
+                  onComplete: () => {
+                    window.location = destination;
+                  },
+                },
+              );
+            }
+          });
+
+          // On click of the back button
+          window.onpageshow = function (event) {
+            if (event.persisted) {
+              window.location.reload();
+            }
+          };
+        });
       });
     </script>
   </body>
